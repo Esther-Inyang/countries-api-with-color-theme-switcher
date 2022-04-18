@@ -1,0 +1,245 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+colors{
+    color: hsl(209, 23%, 22%); /*Dark Mode Elements*/
+    background-color: hsl(207, 26%, 17%); /*Dark Mode Background*/
+    color: hsl(200, 15%, 8%); /*Light Mode Text*/
+    color: hsl(0, 0%, 52%); /*Light Mode Input*/
+    color: hsl(0, 0%, 98%); /*Light Mode Background */
+    color: hsl(0, 0%, 100%); /*Dark Mode Text & Light Mode Elements*/
+}
+
+html{
+    font-size: 67.5%;
+}
+
+body{
+    font-family: Nunito Sans;
+}
+
+.main-page{
+    background-color: hsl(0, 0%, 98%);
+}
+
+/* For JavaScript */
+
+.dark-mode-page{
+    background-color: hsl(207, 26%, 17%) !important;
+}
+
+.dark-mode-element{
+    background-color: hsl(209, 23%, 22%) ;
+}
+
+.dark-mode-element, 
+.dark-mode-element span, 
+.dark-mode-element i, 
+.dark-mode-element input::placeholder{
+    color: hsl(0, 0%, 100%) ;
+}
+
+.light-mode-element{
+    background-color: hsl(0, 0%, 100%)
+}
+
+.light-mode-element{
+    color: hsl(209, 23%, 22%);
+}
+
+
+.search-inputs{
+    width: 100%;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+    padding: 0 2rem;
+    background-color: hsl(209, 23%, 22%);
+
+}
+.search-inputs input::placeholder, 
+.search-inputs i{
+    color: hsl(0, 0%, 100%);
+}
+
+/* .select-country{
+    color: hsl(0, 0%, 52%);
+} */
+
+/* end */
+
+/***********HEADER-SECTION*********/
+.header{
+    width: 100%;
+    padding: 1.3rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 25px rgb(0, 0, 0, .2);
+}
+
+.header-question{
+    font-weight: 600;
+    text-shadow: 0 .5px 1px rgb(0, 0, 0);
+}
+
+.switch-modes{
+    width: 85px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.switch-modes,
+.fa-moon{
+    text-shadow: 0 1px 1.2px rgb(0, 0, 0, .7);
+}
+
+/***********FILTER-SECTION*********/
+.filter-section{
+    width: 85%;
+    margin: 6rem auto 1rem;
+}
+
+.search-field,
+.select-country{
+    box-shadow: 0px 3px 15px rgb(0, 0, 0, .2);
+}
+
+.search-field{
+    width: 100%;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+    padding: 0 2rem;
+}
+
+.search-input,
+.select-country{
+    border: none;
+    font-size: 1.5rem;
+}
+
+.search-input{
+    padding: 1.3rem;
+    background-color: transparent;
+}
+
+.fa-magnifying-glass,
+.search-input::placeholder{
+    color: hsl(0, 0%, 52%);
+    text-shadow: 0 .5px .5px rgb(0, 0, 0, .3);
+}
+
+.fa-magnifying-glass{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.select-country{
+    padding: 1rem 2.5rem;
+    border-radius: 5px;
+    /* color: hsl(0, 0%, 52%); */
+    text-shadow: 0 1px 1.5px rgb(0, 0, 0, .7);
+}
+
+input:focus,
+select:focus{
+    border: none;
+    outline: none;
+}
+
+.filter-option {
+    text-shadow: 0 .5px 1px rgb(0, 0, 0);
+}
+
+.filter-option:focus{
+    border-radius: 10px;
+    box-shadow: 0px 3px 25px rgb(0, 0, 0, .2);
+}
+
+/***********COUNTRIES-SECTION*********/
+.all-countries{
+    padding: 5rem 0;
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    row-gap: 2.5rem;
+    column-gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.country-container{
+    box-shadow: 1px 5px 15px rgb(0, 0, 0, .5);
+    border-radius: .5rem;
+}
+
+.country-img-div{
+    width: 100%;
+}
+
+.country-img{
+    width: 100%;
+    height: 20rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+}
+
+.country-details{
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    text-shadow: 0 .2px 1px rgb(0, 0, 0);
+}
+
+.country-name{
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.population-detail{
+
+}
+
+.population,
+.region,
+.capital{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+
+@media screen and (min-width: 992px) {
+    .filter-section{
+        width: 90%;
+        margin: 6rem auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .search-field{
+        width: 35%;
+        margin-bottom: 0;
+    }
+
+    .all-countries{
+        width: 90%;
+    }
+}
+
+/* 
+1. How to change the border of optgroup
+2. How to add border-radius to optgroup
+3. how to add text-shadow to option
+4. reduce the width of the optgroup
+*/
+
