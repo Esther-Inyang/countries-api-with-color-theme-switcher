@@ -37,18 +37,22 @@
                 <input type="text" class="search-input " placeholder="Search for a country..."/>
             </div>
             
-            <div class="filter-countries">
-                <select class="select-country light-mode-element">
-                    <optgroup class="filter-option">
-                        <option class="filter-by-region">Filter by Region</option>
-                        <option value="Africa">Africa</option>
-                        <option value="America">America</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Europe">Europe</option>
-                    </optgroup> 
-                </select>
+            <div class="select-region-container">
+                <div class="filter-by-region light-mode-element">
+                    <h2 id="filterByReg"> Filter by Region</h2>
+                    <div class="angle-icons">
+                        <span class="angle-down"><i class="fa-solid fa-angle-down" id="angle-dw"></i></span>
+                        <span class="angle-up" id="angleUp"><i class="fa-solid fa-angle-up"></i></span>
+                    </div>
+                </div>
+                
+                <ul class="select-region light-mode-element" id="select-reg">
+                    <li class="region">Africa</li>
+                    <li class="region">America</li>
+                    <li class="region">Asia</li>
+                    <li class="region">Europe</li>
+                </ul> 
             </div>
-            
         </section>
 
         <section class="all-countries-container">
@@ -77,7 +81,7 @@
                     </p>
 
                     <p class="region-detail">
-                        <span class="region"> Region: </span>  
+                        <span class="region-name"> Region: </span>  
                         Europe
                     </p>
 
@@ -87,9 +91,12 @@
                     </p>
                 </div>
             </div>
-        --> 
-            
+        -->   
         </section>
+
+        <div class="arrow-up-div light-mode-element">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
     </main>
 
     <script src="script.js"></script>

@@ -1,10 +1,64 @@
 console.log("Country APIs")
 
+//For Arrow UP////////////////////////////////////
+const arrowUp = document.querySelector(".arrow-up-div");
+
+arrowUp.addEventListener("click", ()=>{
+    // console.log("I am clicked")
+    // window.scrollTo(0, 0);
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behaviour: "smooth"
+    })
+})
+//////////////////////////////////////////////////
+
+//for Select Region Dropdown//////////////////////
+const angleDown = document.querySelector(".fa-angle-down")
+const angleUp = document.querySelector(".fa-angle-up")
+
+const selectRegion = document.querySelector(".select-region")
+
+angleDown.addEventListener("click", ()=>{
+    selectRegion.classList.add("display-block");
+    angleUp.classList.add("display-block")
+    angleDown.classList.add("display-none");
+})
+
+angleUp.addEventListener("click", ()=>{
+    selectRegion.classList.remove("display-block");
+    angleUp.classList.remove("display-block")
+    angleDown.classList.remove("display-none");
+})
+
+window.addEventListener("click", (e)=>{
+    const selectReg = document.querySelector("#select-reg")
+    const angleDw = document.querySelector("#angle-dw")
+    const angleU = document.querySelector("#angleUp")
+
+    if(e.target.id !== "select-reg" && e.target.id !== "angle-dw"){
+        selectReg.style.display = "none";
+        angleU.style.display = "none";
+        angleDw.style.display = "block";
+    }
+    else {
+        selectReg.style.display = "block";
+        angleU.style.display = "block";
+        angleDw.style.display = "none";
+    }
+
+})
+
+
+
+//////////////////////////////////////////////////
+
+
 const mainPage = document.querySelector(".main-page")
 const changeBgBtn = document.querySelector(".switch-modes");
 const moonIcon = document.querySelector(".moon-icon")
 const elements = document.querySelectorAll(".light-mode-element")
-// const countryDetails = document.querySelector(".country-details")
 
 changeBgBtn.addEventListener("click", ()=>{
     elements.forEach((element) => {
@@ -13,14 +67,14 @@ changeBgBtn.addEventListener("click", ()=>{
             element.classList.add('dark-mode-element')
             moonIcon.innerHTML = `<i class="fa-solid fa-moon"></i>`
             mainPage.classList.add('dark-mode-page')
-            // countryDetails.classList.add("dark-mode-element")
+            // mainPage.style.backgroundColor = "hsl(0, 0%, 98%)";
         }
         else{
             element.classList.add('light-mode-element')
             element.classList.remove('dark-mode-element')
             moonIcon.innerHTML = `<i class="fa-regular fa-moon"></i>`
             mainPage.classList.remove('dark-mode-page')
-            // countryDetails.classList.remove("dark-mode-element")
+            // mainPage.style.backgroundColor = "black";
         }
     })
 })
@@ -74,7 +128,7 @@ function setCountriesOnLoad(data){
             </p>
 
             <p class="region-detail">
-                <span class="region"> Region: </span>  
+                <span class="region-name"> Region: </span>  
                 ${region}
             </p> 
 
@@ -110,6 +164,14 @@ function setCountriesOnLoad(data){
 
 /*         WHAT TO FIX
 1. How to add preloader
-2. search for country via APIs
-3. search by Region via APIs
+
+2. Design the Search Page for MOBILE and add more details and modes.
+
+3. Design the Search Page for DESKTOP and add more details and modes.
+
+4. When a country is searched, display the country's page design
+
+5. Design the SELECT REGION Option with dropdown
+
+6. When a REGION is selected, show all countries that contains the selected Region
 */
