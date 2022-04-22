@@ -77,62 +77,62 @@ changeBgBtn.addEventListener("click", ()=>{
 //////////////////////////////////////////////////////////////////////////////
 
 ////////////////Fetching APIs/////////////////////////////////////////////////
-// const baseUrl = 'https://restcountries.com/v3.1/all'
-// const allCountriesContainer = document.querySelector('.all-countries-container') 
+const baseUrl = 'https://restcountries.com/v3.1/all'
+const allCountriesContainer = document.querySelector('.all-countries-container') 
 
-// window.addEventListener("DOMContentLoaded", ()=>{
-//     async function getApi(fromUrl) {
-//         const apiData = await fetch(fromUrl)
-//         const response  = await apiData.json()
-//         setCountriesOnLoad(response) 
-//     }
+window.addEventListener("DOMContentLoaded", ()=>{
+    async function getApi(fromUrl) {
+        const apiData = await fetch(fromUrl)
+        const response  = await apiData.json()
+        setCountriesOnLoad(response) 
+    }
     
-//     getApi(baseUrl)
-// })
+    getApi(baseUrl)
+})
 
-// function setCountriesOnLoad(data){
-//     console.log(data)
+function setCountriesOnLoad(data){
+    console.log(data)
     
-//     allCountriesContainer.innerHTML = '';
-//     data.forEach((country, index) => {
-//         //  console.log(datum.name.common)
-//         const { flags, name, population, region, capital, altSpellings, continents } = country;  
-//         const newCountryContainer = document.createElement("div");
+    allCountriesContainer.innerHTML = '';
+    data.forEach((country, index) => {
+        //  console.log(datum.name.common)
+        const { flags, name, population, region, capital, altSpellings, continents } = country;  
+        const newCountryContainer = document.createElement("div");
 
-//         newCountryContainer.classList.add('country-container')  
-//         newCountryContainer.classList.add('light-mode-element')
+        newCountryContainer.classList.add('country-container')  
+        newCountryContainer.classList.add('light-mode-element')
 
-//         newCountryContainer.innerHTML = 
-//         ` <div class="country-img-div">
-//             <img src="${flags.svg}" class="country-img">
-//             </div>
+        newCountryContainer.innerHTML = 
+        ` <div class="country-img-div">
+            <img src="${flags.svg}" class="country-img">
+            </div>
 
-//         <div class="country-details">
-//             <h1 class="country-name">${name.common}</h1>
-//                 <p><span class="country-alt"> Alt Spelling: </span> ${altSpellings[0]}</p>
-//                 <p><span class="continent"> Continent: </span>${continents[0]}</p>
-//                 <p><span class="population"> Population: </span> ${population}</p>
-//                 <p><span class="region-name"> Region: </span> ${region} </p> 
-//                 <p><span class="capital"> Capital: </span> ${capital}</p>
-//             </div> `
+        <div class="country-details">
+            <h1 class="country-name">${name.common}</h1>
+                <p><span class="country-alt"> Alt Spelling: </span> ${altSpellings[0]}</p>
+                <p><span class="continent"> Continent: </span>${continents[0]}</p>
+                <p><span class="population"> Population: </span> ${population}</p>
+                <p><span class="region-name"> Region: </span> ${region} </p> 
+                <p><span class="capital"> Capital: </span> ${capital}</p>
+            </div> `
 
-//         ///////////////Switching Light and Dark Background Modes/////////////
-//         const changeBgBtn = document.querySelector(".switch-modes");
+        ///////////////Switching Light and Dark Background Modes/////////////
+        const changeBgBtn = document.querySelector(".switch-modes");
 
-//         changeBgBtn.addEventListener("click", ()=>{
-//             if(newCountryContainer.classList.contains('light-mode-element')){
-//                 newCountryContainer.classList.remove('light-mode-element')
-//                 newCountryContainer.classList.add('dark-mode-element')
-//             }
-//             else{
-//                 newCountryContainer.classList.add('light-mode-element')
-//                 newCountryContainer.classList.remove('dark-mode-element')
-//             }
-//         })
-//         ////////////////////////////////////////////////////////////////////////
-//         allCountriesContainer.appendChild(newCountryContainer)
-//     })
-// }
+        changeBgBtn.addEventListener("click", ()=>{
+            if(newCountryContainer.classList.contains('light-mode-element')){
+                newCountryContainer.classList.remove('light-mode-element')
+                newCountryContainer.classList.add('dark-mode-element')
+            }
+            else{
+                newCountryContainer.classList.add('light-mode-element')
+                newCountryContainer.classList.remove('dark-mode-element')
+            }
+        })
+        ////////////////////////////////////////////////////////////////////////
+        allCountriesContainer.appendChild(newCountryContainer)
+    })
+}
 
 
 
