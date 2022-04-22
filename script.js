@@ -1,6 +1,6 @@
 console.log("Country APIs")
 
-//For Arrow UP////////////////////////////////////
+//For Arrow UP/////////////////////////////////////////////////////////////
 const arrowUp = document.querySelector(".arrow-up-div");
 
 arrowUp.addEventListener("click", ()=>{
@@ -12,12 +12,11 @@ arrowUp.addEventListener("click", ()=>{
         behaviour: "smooth"
     })
 })
-//////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
-//for Select Region Dropdown//////////////////////
+///////////////////for Select-Region Dropdown//////////////////////////////
 const angleDown = document.querySelector(".fa-angle-down")
 const angleUp = document.querySelector(".fa-angle-up")
-
 const selectRegion = document.querySelector(".select-region")
 
 angleDown.addEventListener("click", ()=>{
@@ -50,11 +49,9 @@ window.addEventListener("click", (e)=>{
 
 })
 
+///////////////////////////////////////////////////////////////////////////
 
-
-//////////////////////////////////////////////////
-
-
+///////////////////////////Changing Background Modes///////////////////////
 const mainPage = document.querySelector(".main-page")
 const changeBgBtn = document.querySelector(".switch-modes");
 const moonIcon = document.querySelector(".moon-icon")
@@ -67,97 +64,75 @@ changeBgBtn.addEventListener("click", ()=>{
             element.classList.add('dark-mode-element')
             moonIcon.innerHTML = `<i class="fa-solid fa-moon"></i>`
             mainPage.classList.add('dark-mode-page')
-            // mainPage.style.backgroundColor = "hsl(0, 0%, 98%)";
         }
         else{
             element.classList.add('light-mode-element')
             element.classList.remove('dark-mode-element')
             moonIcon.innerHTML = `<i class="fa-regular fa-moon"></i>`
             mainPage.classList.remove('dark-mode-page')
-            // mainPage.style.backgroundColor = "black";
         }
     })
 })
 
-const baseUrl = 'https://restcountries.com/v3.1/all'
-const allCountriesContainer = document.querySelector('.all-countries-container') 
+//////////////////////////////////////////////////////////////////////////////
 
-window.addEventListener("DOMContentLoaded", ()=>{
-    async function getApi(fromUrl) {
-        const apiData = await fetch(fromUrl)
-        const response  = await apiData.json()
-        setCountriesOnLoad(response) 
-    }
+////////////////Fetching APIs/////////////////////////////////////////////////
+// const baseUrl = 'https://restcountries.com/v3.1/all'
+// const allCountriesContainer = document.querySelector('.all-countries-container') 
+
+// window.addEventListener("DOMContentLoaded", ()=>{
+//     async function getApi(fromUrl) {
+//         const apiData = await fetch(fromUrl)
+//         const response  = await apiData.json()
+//         setCountriesOnLoad(response) 
+//     }
     
-    getApi(baseUrl)
-})
+//     getApi(baseUrl)
+// })
 
-function setCountriesOnLoad(data){
-    console.log(data)
+// function setCountriesOnLoad(data){
+//     console.log(data)
     
-    allCountriesContainer.innerHTML = '';
-    data.forEach((country, index) => {
-        //  console.log(datum.name.common)
-        const { flags, name, population, region, capital, altSpellings, continents } = country;  
-        const newCountryContainer = document.createElement("div");
+//     allCountriesContainer.innerHTML = '';
+//     data.forEach((country, index) => {
+//         //  console.log(datum.name.common)
+//         const { flags, name, population, region, capital, altSpellings, continents } = country;  
+//         const newCountryContainer = document.createElement("div");
 
-        newCountryContainer.classList.add('country-container')  
-        newCountryContainer.classList.add('light-mode-element')
+//         newCountryContainer.classList.add('country-container')  
+//         newCountryContainer.classList.add('light-mode-element')
 
-        newCountryContainer.innerHTML = 
-        ` <div class="country-img-div">
-            <img src="${flags.svg}" class="country-img">
-            </div>
+//         newCountryContainer.innerHTML = 
+//         ` <div class="country-img-div">
+//             <img src="${flags.svg}" class="country-img">
+//             </div>
 
-        <div class="country-details">
-            <h1 class="country-name">${name.common}</h1>
-            
-            <p class="country-alt-detail">
-                <span class="country-alt"> Alt Spelling: </span>
-                ${altSpellings[0]}
-            </p>
+//         <div class="country-details">
+//             <h1 class="country-name">${name.common}</h1>
+//                 <p><span class="country-alt"> Alt Spelling: </span> ${altSpellings[0]}</p>
+//                 <p><span class="continent"> Continent: </span>${continents[0]}</p>
+//                 <p><span class="population"> Population: </span> ${population}</p>
+//                 <p><span class="region-name"> Region: </span> ${region} </p> 
+//                 <p><span class="capital"> Capital: </span> ${capital}</p>
+//             </div> `
 
-            <p class="continents-detail">
-                <span class="continent"> Continent: </span>
-                ${continents[0]}
-            </p>
+//         ///////////////Switching Light and Dark Background Modes/////////////
+//         const changeBgBtn = document.querySelector(".switch-modes");
 
-            <p class="population-detail">
-                <span class="population"> Population: </span> 
-                ${population}
-            </p>
-
-            <p class="region-detail">
-                <span class="region-name"> Region: </span>  
-                ${region}
-            </p> 
-
-            <p class="capital-detail">
-                <span class="capital"> Capital: </span>  
-                ${capital}
-            </p>
-        </div> `
-
-        ///////////////Switching Light and Dark Background Modes///////////////
-
-        const changeBgBtn = document.querySelector(".switch-modes");
-
-        changeBgBtn.addEventListener("click", ()=>{
-            if(newCountryContainer.classList.contains('light-mode-element')){
-                newCountryContainer.classList.remove('light-mode-element')
-                newCountryContainer.classList.add('dark-mode-element')
-            }
-            else{
-                newCountryContainer.classList.add('light-mode-element')
-                newCountryContainer.classList.remove('dark-mode-element')
-            }
-        })
-
-        ////////////////////////////////////////////////////////////////////////
-
-        allCountriesContainer.appendChild(newCountryContainer)
-    })
-}
+//         changeBgBtn.addEventListener("click", ()=>{
+//             if(newCountryContainer.classList.contains('light-mode-element')){
+//                 newCountryContainer.classList.remove('light-mode-element')
+//                 newCountryContainer.classList.add('dark-mode-element')
+//             }
+//             else{
+//                 newCountryContainer.classList.add('light-mode-element')
+//                 newCountryContainer.classList.remove('dark-mode-element')
+//             }
+//         })
+//         ////////////////////////////////////////////////////////////////////////
+//         allCountriesContainer.appendChild(newCountryContainer)
+//     })
+// }
 
 
 
@@ -174,4 +149,8 @@ function setCountriesOnLoad(data){
 5. Design the SELECT REGION Option with dropdown
 
 6. When a REGION is selected, show all countries that contains the selected Region
+
+7. Search field font-color on darkmode to white
+
+8. Clicking any of the Border Countries should display the Country details
 */
